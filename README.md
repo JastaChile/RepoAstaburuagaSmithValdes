@@ -1,5 +1,7 @@
 # Repositorio de Joaquín Astaburuaga, Philippa Smith y Laura Valdés para Narración Gráfica de No Ficción, el primer semestre de 2024
 
+# Entrega 01
+
 ## Explique el proyecto de investigación 
 
 La “Belle Époque” fue un periodo en Occidente comprendido entre 1871 (fin de la guerra Franco-Prusiana) y 1914 (inicio Primera Guerra Mundial). Se refiere a la adopción de nuevos valores, el inicio de nuevas tecnologías, transformaciones culturales y de moda en las sociedades tras el término de la crisis bélica.  
