@@ -1,5 +1,3 @@
-# Repositorio de Joaquín Astaburuaga, Philippa Smith y Laura Valdés para Narración Gráfica de No Ficción, el primer semestre de 2024
-
 # Entrega 01
 
 ## Explique el proyecto de investigación 
