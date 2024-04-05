@@ -1,5 +1,7 @@
 # Entrega 01
 
+En este [enlace](https://youtu.be/PMNTPXA85mM) puedes revisar nuestra presentación del proyecto.
+
 ## Explique el proyecto de investigación 
 
 La “Belle Époque” fue un periodo en Occidente comprendido entre 1871 (fin de la guerra Franco-Prusiana) y 1914 (inicio Primera Guerra Mundial). Se refiere a la adopción de nuevos valores, el inicio de nuevas tecnologías, transformaciones culturales y de moda en las sociedades tras el término de la crisis bélica.  
@@ -73,6 +75,53 @@ Todo lo posible, nos gustaría poder aprender la mayor cantidad de herramientas 
 Con la obtención de una herramienta que nos permita hacer gráficos pretendemos mostrar la comparación de cada época en cada indicador que queramos, como la moda, las políticas públicas o los cambios de hábitos. Así, poder hacer gráficas buenas con estos gráficos hará más amigable el entendimiento del contenido que hemos investigado. 
 
 ### Base de datos inicial 
+
+Hasta ahora solamente creamos una [carpeta en One Drive](https://uccl0-my.sharepoint.com/:f:/g/personal/jastaburuagac_uc_cl/EjSNw6F4rRtMg28bWb-nf58BytC9T_INbcirDfjXoSICtQ?e=rYKE3i) para ir guardando todo lo relacionado con la investigación.
+
+## Análisis críticos personales
+
+### Philippa Smith
+
+#### ¿Por qué es relevante para ti realizar este tema? 
+
+Me gustaría poder comprobar y analizar en mayor profundidad que la historia, que comprende la moda, política y cultura, puede ser, de cierto modo, cíclica. 
+
+#### ¿Qué esperas contar y/o revelar con él? ¿Cuál es el impacto que esperas generar? 
+
+Espero contar por medio de datos una analogía de la historia que puede ser muy entretenida y curiosa para un público.
+
+#### Elabora al menos 3 ideas que te gustaría realizar para contar la historia 
+
+- Desarrollar el "Principio de la minifalda”
+- Hacer algún gráfico visual de las 3 épocas
+- Que sea de fácil compresión 
+
+#### ¿Qué te gustaría aprender en este proyecto?
+
+Me gustaría aprender a ejecutar la investigación de un proyecto en su profundidad y poner a prueba mis habilidades para comunicar una compleja investigación en el formato digital.
+
+### Laura Valdés
+
+#### ¿Por qué es relevante para ti realizar este tema? 
+
+Porque los procesos se repiten a lo largo de la historia, así como volvimos a vivir un toque de queda en Chile y una pandemia. Entonces, es importante analizar de qué manera se dan estos procesos para poder enfrentarlos cuando reaparezcan.
+
+#### ¿Qué esperas contar y/o revelar con él? ¿Cuál es el impacto que esperas generar? 
+
+Busco generar un impacto que demuestre el comportamiento humano. Ya que el tiempo puede cambiar, pero ser el humano no evoluciona hace mucho tiempo, por ende su conducta no varía tanto como creemos.
+
+#### Elabora al menos 3 ideas que te gustaría realizar para contar la historia 
+
+- Análisis comparativo de la moda 
+- Diferencias con periodos en otras situaciones socioeconómicas.
+- Como se presentan estos periodos en los medios de comunicación.
+
+#### ¿Qué te gustaría aprender en este proyecto?
+
+Aprender a reconocer otros iconos/signos/símbolos sociales como la falda corta o larga, que representan la economía
+
+### Joaquín Astaburuaga
+
 
 
 
