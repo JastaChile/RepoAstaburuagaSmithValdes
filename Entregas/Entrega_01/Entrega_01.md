@@ -78,9 +78,9 @@ Con la obtención de una herramienta que nos permita hacer gráficos pretendemos
 
 Hasta ahora solamente creamos una [carpeta en One Drive](https://uccl0-my.sharepoint.com/:f:/g/personal/jastaburuagac_uc_cl/EjSNw6F4rRtMg28bWb-nf58BytC9T_INbcirDfjXoSICtQ?e=rYKE3i) para ir guardando todo lo relacionado con la investigación.
 
-## Análisis críticos personales
+# Análisis críticos personales
 
-### Philippa Smith
+## Philippa Smith
 
 #### ¿Por qué es relevante para ti realizar este tema? 
 
@@ -100,7 +100,7 @@ Espero contar por medio de datos una analogía de la historia que puede ser muy 
 
 Me gustaría aprender a ejecutar la investigación de un proyecto en su profundidad y poner a prueba mis habilidades para comunicar una compleja investigación en el formato digital.
 
-### Laura Valdés
+## Laura Valdés
 
 #### ¿Por qué es relevante para ti realizar este tema? 
 
@@ -120,11 +120,25 @@ Busco generar un impacto que demuestre el comportamiento humano. Ya que el tiemp
 
 Aprender a reconocer otros iconos/signos/símbolos sociales como la falda corta o larga, que representan la economía
 
-### Joaquín Astaburuaga
+## Joaquín Astaburuaga
 
+#### ¿Por qué es relevante para ti realizar este tema? 
 
+Me interesa porque me gusta mucho la historia y la idea de que todo es cíclico. Se ha hablado mucho en medios de que quizás después de la pandemia volvimos a una "época dorada" o con mayores libertades y con un cambio de paradigma, pero no existen investigaciones al respecto, por lo mismo me gustaría realmente saber si se parece a las épocas anteriores o no.
 
+#### ¿Qué esperas contar y/o revelar con él? ¿Cuál es el impacto que esperas generar? 
 
+Espero que podamos contar que la historia es cíclica, que podemos conectarnos con el pasado de la humanidad a través de experiencias similares. El impacto más que nada sería decir que quizás la pandemia generó mayores políticas públicas y reencuentros entre la gente, a través de la moda y otros ámbitos culturales. 
+
+#### Elabora al menos 3 ideas que te gustaría realizar para contar la historia 
+
+- Gráficos que simplifiquen la comprensión
+- Analizar si la teoría de la moda es aplicable (minifalda)
+- Algún juego interactivo con preguntas y respuestas al lector de la webstory
+
+#### ¿Qué te gustaría aprender en este proyecto?
+
+A usar herramientas digitales
  
 
  
