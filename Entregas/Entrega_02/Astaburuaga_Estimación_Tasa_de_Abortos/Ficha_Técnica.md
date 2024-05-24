@@ -2,7 +2,7 @@
 
 ## Característica de los datos
 
-Los datos corresponden a estimaciones realizadas por la [World Health Organization](https://www.who.int/) disponibles en [este enlace](https://example.com). La página proporciona una estimación modelada del índice de abortos por cada 1000 mujeres en edad reproductiva (15-49 años) en diferentes países y territorios. Utiliza un modelo bayesiano para calcular estas tasas a partir de datos sobre necesidades y uso de anticonceptivos, métodos anticonceptivos, tasas de natalidad y datos de incidencia de abortos. Estos datos se desglosan en agregados regionales y globales, considerando dos intervalos de incertidumbre por país al 80% y al 95%.
+Los datos corresponden a estimaciones realizadas por la World Health Organization disponibles en [este enlace](https://example.com). La página proporciona una estimación modelada del índice de abortos por cada 1000 mujeres en edad reproductiva (15-49 años) en diferentes países y territorios. Utiliza un modelo bayesiano para calcular estas tasas a partir de datos sobre necesidades y uso de anticonceptivos, métodos anticonceptivos, tasas de natalidad y datos de incidencia de abortos. Estos datos se desglosan en agregados regionales y globales, considerando dos intervalos de incertidumbre por país al 80% y al 95%.
 
 ## Alcance metodológico
 
