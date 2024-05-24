@@ -1,1 +1,1 @@
-"Característica de los datos"
+#Característica de los datos
