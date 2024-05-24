@@ -1,10 +1,9 @@
 # Proceso de Limpieza de Datos de la Tasa de Aborto
 
-## Breve descripción de los Datos
+## Descripción de los Datos
 La base de datos de la OMS sobre la tasa de aborto incluye estimaciones de la tasa de aborto por cada 1000 mujeres en edad reproductiva (15-49 años) para varios países y territorios. Las estimaciones se proporcionan con intervalos de incertidumbre del 80% y del 95%.
 
 ## Pasos Realizados
-
 ### 1. Cargar los Datos
 En primer lugar, se descargaron los datos desde [este link](https://www.who.int/data/gho/data/indicators/indicator-details/GHO/SRH_ABORTION_RATE), los cuales venían en formato csv. Este archivo fue subido a un notebook en google colab para trabajar correctamente con él.
 
@@ -25,3 +24,13 @@ Finalmente, exportamos el DataFrame limpio a un nuevo archivo CSV. Este archivo 
 
 ## Observaciones
 Este proceso de limpieza asegura que los datos estén en un formato óptimo para análisis posteriores, manteniendo únicamente las columnas esenciales y eliminando duplicados o valores constantes innecesarios. Específicamente, se retienen solo las columnas que se refieren a la identificación del país, la región continental, y los valores de las dos estimaciones de tasas de aborto, junto con sus respectivos intervalos de incertidumbre. La decisión de conservar ambas estimaciones de tasas para cada país permite realizar un análisis más completo y detallado de la situación. Al mantener tanto las estimaciones al 80% como al 95% de incertidumbre, se proporciona una visión más rica y precisa de la variabilidad y fiabilidad de los datos, lo que es crucial para comprender las dinámicas subyacentes y apoyar la toma de decisiones informadas en políticas de salud pública y reproductiva. Este enfoque integral nos capacita para identificar patrones, evaluar riesgos y diseñar intervenciones más efectivas y contextualizadas para abordar las necesidades de salud reproductiva a nivel global y regional.
+
+### Algunas de las preguntas que la base de datos limpia podría responder:
+
+- ¿Existen grandes diferencias en las tasas de aborto entre países dentro de un mismo continente?
+
+- ¿Cuál es el promedio de las tasas de aborto en el mundo entero y en sus diferentes regiones?
+
+- ¿Tienen tasas más altas de aborto las regiones menos desarrolladas?
+
+- ¿Cuál es la variabilidad de las tasas de aborto entre todos los países del mundo?
