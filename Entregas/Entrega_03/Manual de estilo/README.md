@@ -1,1 +1,1 @@
-
+En esta carpeta puedes encontrar nuestro logo en distintos formatos y un archivo pdf que contiene nuestro manual de marca o "Brandkit", con nuestra paleta de colores, tipografía y ejemplos de visualización en redes sociales.
