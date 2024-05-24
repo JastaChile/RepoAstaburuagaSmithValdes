@@ -1,0 +1,145 @@
+ParentLocation,SpatialDimValueCode,Location,FactValueNumericLow_80,FactValueNumericHigh_80,Value_80,FactValueNumericLow_95,FactValueNumericHigh_95,Value_95
+Europe,POL,Poland,6,20,10,4,28,10
+Europe,BGR,Bulgaria,9,11,10,9,12,10
+Europe,LVA,Latvia,9,11,10,9,12,10
+Europe,BLR,Belarus,9,12,10,9,12,10
+Europe,NOR,Norway,11,11,11,10,11,11
+Americas,URY,Uruguay,11,12,11,10,13,11
+Europe,BIH,Bosnia and Herzegovina,7,18,11,5,24,11
+Americas,CAN,Canada,11,12,12,11,12,12
+Europe,DNK,Denmark,11,12,12,11,12,12
+Western Pacific,NZL,New Zealand,12,12,12,11,13,12
+Americas,USA,United States of America,12,12,12,11,13,12
+Europe,SRB,Serbia,10,18,13,8,21,13
+Europe,ISL,Iceland,12,13,13,12,13,13
+Europe,GBR,United Kingdom of Great Britain and Northern Ireland,13,14,13,13,14,13
+Europe,MKD,North Macedonia,11,20,14,10,25,14
+Europe,HUN,Hungary,13,15,14,12,15,14
+Europe,FRA,France,14,15,14,14,15,14
+Africa,SEN,Senegal,11,20,15,10,23,15
+Americas,NIC,Nicaragua,7,27,15,4,36,15
+Africa,NER,Niger,8,26,15,5,33,15
+Europe,GRC,Greece,8,31,15,7,41,15
+Europe,HRV,Croatia,11,27,16,8,35,16
+Western Pacific,AUS,Australia,12,21,16,10,23,16
+Europe,EST,Estonia,15,17,16,14,18,16
+Africa,GMB,Gambia,8,28,16,4,37,16
+Europe,SWE,Sweden,17,18,17,17,18,17
+Africa,MRT,Mauritania,7,31,17,3,41,17
+Africa,TCD,Chad,8,31,17,4,40,17
+Europe,MDA,Republic of Moldova,13,28,18,11,35,18
+Africa,ZWE,Zimbabwe,16,22,18,14,24,18
+Europe,ITA,Italy,12,28,19,10,35,19
+Americas,GTM,Guatemala,12,29,19,10,35,19
+Europe,TKM,Turkmenistan,13,28,19,10,34,19
+Eastern Mediterranean,DJI,Djibouti,10,37,21,7,52,21
+Africa,ERI,Eritrea,11,37,21,7,50,21
+Americas,CRI,Costa Rica,15,28,21,13,34,21
+Europe,UKR,Ukraine,15,30,21,14,38,21
+Western Pacific,KOR,Republic of Korea,16,31,21,14,40,21
+Western Pacific,MNG,Mongolia,19,22,21,18,23,21
+Americas,HND,Honduras,8,39,21,4,50,21
+Africa,LSO,Lesotho,11,44,23,6,61,23
+Africa,MLI,Mali,12,37,23,8,47,23
+Europe,UZB,Uzbekistan,15,35,23,13,45,23
+Americas,SLV,El Salvador,12,40,24,9,51,24
+Africa,ETH,Ethiopia,20,31,24,17,35,24
+Western Pacific,TON,Tonga,11,50,25,7,72,25
+Africa,SSD,South Sudan,12,45,25,8,61,25
+South-East Asia,THA,Thailand,13,45,25,9,60,25
+South-East Asia,IDN,Indonesia,14,41,25,10,52,25
+Africa,BDI,Burundi,12,43,26,8,56,26
+South-East Asia,MMR,Myanmar,14,43,26,10,55,26
+Africa,GIN,Guinea,14,45,26,9,58,26
+Europe,TJK,Tajikistan,17,44,26,15,60,26
+Africa,CAF,Central African Republic,12,54,27,6,77,27
+Americas,COL,Colombia,20,36,27,16,41,27
+Americas,ECU,Ecuador,14,50,28,8,66,28
+South-East Asia,LKA,Sri Lanka,17,45,28,13,59,28
+Africa,RWA,Rwanda,20,37,28,16,42,28
+Africa,SWZ,Eswatini,13,55,29,8,78,29
+Africa,NAM,Namibia,13,58,29,8,81,29
+Eastern Mediterranean,SOM,Somalia,14,51,29,6,68,29
+Africa,ZAF,South Africa,14,57,30,10,78,30
+Americas,PAN,Panama,17,50,30,12,63,30
+Africa,BFA,Burkina Faso,22,42,30,18,49,30
+Africa,COM,Comoros,16,50,31,11,67,31
+Americas,SUR,Suriname,18,49,31,12,60,31
+Americas,PRI,Puerto Rico,18,51,31,13,64,31
+Africa,BWA,Botswana,18,56,31,14,78,31
+Europe,ROU,Romania,21,51,31,17,68,31
+Europe,KGZ,Kyrgyzstan,22,44,31,19,53,31
+Americas,MEX,Mexico,23,40,31,19,45,31
+Africa,MWI,Malawi,27,36,31,25,40,31
+Americas,BLZ,Belize,15,59,32,8,76,32
+Africa,TGO,Togo,16,56,32,10,73,32
+Africa,BEN,Benin,17,54,32,11,70,32
+Americas,BRA,Brazil,18,54,32,13,69,32
+South-East Asia,BTN,Bhutan,21,47,32,15,58,32
+Western Pacific,SLB,Solomon Islands,8,65,32,2,84,32
+Africa,AGO,Angola,14,65,33,7,88,33
+Africa,COD,Democratic Republic of the Congo,17,50,33,11,59,33
+Americas,ARG,Argentina,23,46,33,18,55,33
+Africa,NGA,Nigeria,26,41,33,23,46,33
+Americas,PRY,Paraguay,16,60,34,11,80,34
+Africa,CMR,Cameroon,18,60,34,12,82,34
+South-East Asia,TLS,Timor-Leste,19,56,34,14,75,34
+Western Pacific,LAO,Lao People's Democratic Republic,21,56,34,16,71,34
+Africa,ZMB,Zambia,18,55,35,10,69,35
+Africa,CIV,Cote d'Ivoire,18,63,35,12,84,35
+South-East Asia,BGD,Bangladesh,29,44,35,25,50,35
+Western Pacific,PNG,Papua New Guinea,16,73,36,8,101,36
+Americas,GUY,Guyana,21,57,36,15,71,36
+Americas,CHL,Chile,21,59,36,16,76,36
+Western Pacific,PHL,Philippines,23,53,36,17,63,36
+Africa,GHA,Ghana,21,60,37,16,76,37
+Americas,LCA,Saint Lucia,21,62,37,14,80,37
+Americas,DOM,Dominican Republic,23,54,37,18,65,37
+Americas,HTI,Haiti,17,68,38,10,86,38
+Americas,BOL,Bolivia (Plurinational State of),18,67,38,10,87,38
+Americas,JAM,Jamaica,21,61,38,14,76,38
+Africa,TZA,United Republic of Tanzania,30,47,38,25,53,38
+Africa,STP,Sao Tome and Principe,15,73,39,6,100,39
+Western Pacific,VUT,Vanuatu,17,77,39,9,102,39
+Africa,MOZ,Mozambique,23,67,40,15,82,40
+Africa,GAB,Gabon,25,72,41,21,96,41
+South-East Asia,NPL,Nepal,32,53,41,28,60,41
+Africa,LBR,Liberia,21,76,42,14,103,42
+South-East Asia,MDV,Maldives,23,74,42,16,100,42
+Americas,PER,Peru,29,60,42,23,71,42
+Western Pacific,WSM,Samoa,21,73,43,12,103,43
+Europe,ARM,Armenia,31,60,43,26,73,43
+Africa,KEN,Kenya,34,54,43,29,61,43
+Eastern Mediterranean,PAK,Pakistan,34,54,43,30,62,43
+Africa,UGA,Uganda,34,54,43,29,60,43
+Africa,COG,Congo,29,77,44,23,106,44
+Africa,SLE,Sierra Leone,24,77,45,17,102,45
+Americas,BRB,Barbados,26,71,45,18,90,45
+Western Pacific,KHM,Cambodia,30,71,45,25,92,45
+Europe,RUS,Russian Federation,34,64,46,30,77,46
+Europe,KAZ,Kazakhstan,32,70,47,26,86,47
+Americas,TTO,Trinidad and Tobago,29,75,48,20,94,48
+South-East Asia,IND,India,44,54,48,41,58,48
+Africa,CPV,Cabo Verde,23,93,49,12,123,49
+Western Pacific,CHN,China,37,68,49,33,79,49
+Europe,CHE,Switzerland,5,5,5,5,5,5
+Western Pacific,SGP,Singapore,5,6,5,5,6,5
+Americas,CUB,Cuba,45,66,55,41,73,55
+Africa,GNB,Guinea-Bissau,29,104,59,19,136,59
+Europe,MNE,Montenegro,5,6,6,5,7,6
+Europe,DEU,Germany,6,6,6,6,6,6
+Western Pacific,JPN,Japan,6,7,6,6,7,6
+Africa,MDG,Madagascar,30,91,60,19,107,60
+Western Pacific,VNM,Viet Nam,41,93,64,32,114,64
+Europe,CZE,Czechia,6,7,7,6,8,7
+Europe,NLD,Netherlands (Kingdom of the),7,7,7,7,7,7
+Europe,PRT,Portugal,7,7,7,6,7,7
+Europe,LTU,Lithuania,7,8,7,6,8,7
+Europe,SVK,Slovakia,7,8,7,6,8,7
+Europe,AZE,Azerbaijan,49,102,72,40,121,72
+Europe,BEL,Belgium,7,9,8,6,9,8
+Europe,FIN,Finland,8,8,8,8,8,8
+Europe,SVN,Slovenia,8,9,8,7,9,8
+Europe,GEO,Georgia,55,113,80,46,133,80
+Europe,ALB,Albania,6,14,9,5,18,9
+Europe,ESP,Spain,8,9,9,8,9,9
