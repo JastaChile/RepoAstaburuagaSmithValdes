@@ -1,1 +1,1 @@
-*h
+"Característica de los datos"
