@@ -5,6 +5,7 @@ Algunos ejemplos sobre preguntas que se pueden responder su base de datos limpia
 
 
 Philippa Smith: Políticas Públicas del aborto en distintos países
+
 Para la limpieza de datos, remplacé haciendo asignaciones a los datos originales, así limpiar donde no hayan respuestas y filtrar dos variables de columnas que interesan al proyecto: Reproductive Health Act y Abortion Specific Law. 
 
 ¿En qué países es penalizado el aborto?
