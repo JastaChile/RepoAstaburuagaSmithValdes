@@ -1,10 +1,14 @@
 # Ficha Técnica
 
-## Característica de los datos:
+## Varibles incorporadas:
 La página muestra una base de datos del aborto a nivel global. El tema es de Políticas identificadas y fuentes legales relacionadas con el aborto, donde los datos manejan distintas variables de forma clara con lo que se pudo recolectar de información por país. Se representan en formato de tabla.
+Ley de salud reproductiva, Leyes específicas del aborto y Leyes de Medicina general: Nos indica en cada variable si esta existe en el país o no. 
 
-## Alcance metodológico:
-La cobertura de esta información proviene de diversas fuentes, incluyendo sistemas nacionales de información en salud y encuestas poblacionales. Las estimaciones se actualizan quinquenalmente y se emplean para monitorizar y evaluar la necesidad de cuidados en el contexto de abortos seguros, con la finalidad de reducir la mortalidad y morbilidad maternas asociadas con abortos inseguros. La base de datos también ofrece resúmenes regionales y globales, categorizando la información según las regiones definidas por los Objetivos de Desarrollo Sostenible (ODS) de la ONU.
+##Características de los datos
+Son cuantitativos 
+
+## Observaciones sobre las bases :
+La base de datos fue sencilla de usar porque solo se cambiaron los datos vacíos por 0 y donde sí habían datos, que tenían una X, se modificaron por un 1. Antes se usaron todas las variables y para estas representaciones solo las tres variables para el tema: Ley de salud reproductiva, Leyes específicas del aborto y Leyes de Medicina General.
 
 ## Variables incorporadas:
 Las variables que se filtraron son Reproductive Health Act y Abortion Specific Law. 
