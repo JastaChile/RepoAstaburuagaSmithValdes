@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparación de Aborto en Distintos Países</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .graph-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .graph {
+            width: 45%;
+            min-width: 300px;
+            margin: 10px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Comparación de Aborto en Distintos Países</h1>
+    <div class="graph-container">
+        <div id="grafico1" class="graph"></div>
+        <div id="grafico2" class="graph"></div>
+    </div>
+
+    <script>
+        // Aquí irá el código JavaScript para crear los gráficos
+        function crearGrafico1() {
+            // Datos del gráfico 1
+            var data = [{
+                // Configuración del gráfico 1
+            }];
+            var layout = {
+                // Diseño del gráfico 1
+            };
+            Plotly.newPlot('grafico1', data, layout);
+        }
+
+        function crearGrafico2() {
+            // Datos del gráfico 2
+            var data = [{
+                // Configuración del gráfico 2
+            }];
+            var layout = {
+                // Diseño del gráfico 2
+            };
+            Plotly.newPlot('grafico2', data, layout);
+        }
+
+        // Llamar a las funciones para crear los gráficos
+        crearGrafico1();
+        crearGrafico2();
+    </script>
+</body>
+</html>
