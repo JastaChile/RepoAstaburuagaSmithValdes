@@ -1,4 +1,5 @@
 Link a presentación: 
+
 Nuestra página web contempla la brecha entre los índices de aborto entre países de Europa y Latinoamérica.
 El primer gráfico muestra los ínidces de embarazo no deseados en Europa y Latinoamérica utilizando una muestra de cada continente.Podemos visualizar  la cantidad de embarazos no deseados cada mil embarazos en Francia, Alemania, Italia, Suiza Finlandia, Holanda, Reino Unido, España, Portugal, Dinamarca, Grecia y Noruega, como muestra representativa de Europa , y en el caso de Latinoamérica, la muestra se recoge desde Argentina, Bolivia, Chile, Colombia, Ecuador, Uruguay, Perú, República Domicana y Cuba.
 Según el gráfico, comparando con la tabla que se muestra más abajo acerca del aborto penalizado o legalizado en cada país, se puede visualizar que son justamente los países los países de Europa son aquellos en donde existen menos embarazados no deseados y donde el aborto está legalizado. En el caso de Latinoamerica, los países presentan una mayor tasa de embarazados no deseados son aquellos en donde el aborto está penalizado.
