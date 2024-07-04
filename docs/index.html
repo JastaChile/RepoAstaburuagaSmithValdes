@@ -10,62 +10,360 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f0f0f0;
+            background-color: #DF6C92;
         }
-        h1 {
+        h1, h2 {
             color: #333;
             text-align: center;
         }
-        .graph-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        .graph {
-            width: 45%;
-            min-width: 300px;
-            margin: 10px;
+        .header {
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    padding: 20px 0;
+		}
+
+		.logo {
+		    max-width: 200px; /* Ajusta este valor según el tamaño deseado */
+		    height: auto;
+		}
+        .section {
             background-color: white;
-            padding: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .image-text {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .image-text img {
+            width: 45%;
+            max-width: 800px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .image-text p {
+            width: 45%;
+        }
+        .image-3 {
+        	width: 100%;
+        }
+        .table-a {
+        	display: flex;
+        	align-items: center;
+        	justify-content: center;
+        }
+        #mapa {
+            width: 100%;
+            height: 400px;
+        }
+        table {
+            width: 45%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        p {
+        	text-align: center;
         }
     </style>
 </head>
 <body>
-    <h1>Comparación de Aborto en Distintos Países</h1>
-    <div class="graph-container">
-        <div id="grafico1" class="graph"></div>
-        <div id="grafico2" class="graph"></div>
+	<header class="header">
+  		<img loading="lazy" class="logo" src="img/logo.png" alt="Logo">
+	</header>
+    <h1>Aborto en el sistema</h1>
+    <p>Entre Latinoamerica y Europa existe una brecha significativa con respecto los índices de aborto en cada continente.</p>
+    
+    <div class="section">
+        <div class="image-text">
+            <img src="img/grafico1.png" alt="Descripción imagen 1">
+            <p>Justamente los países los países de Europa son aquellos en donde existen menos embarazados no deseados y donde el aborto está legalizado.  
+			</p>
+        </div>
+        <h3>Estado del Aborto por País</h3>
+        <div class="image-text">
+        	<table>
+	            <tr>
+	                <th>País</th>
+	                <th>Aborto Penalizado</th>
+	                <th>Aborto Legalizado</th>
+	            </tr>
+	            <tr>
+	                <td>Francia</td>
+	                <td>No</td>
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Alemania</td>
+	                <td>No</td>
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Italia</td>
+	                <td>No</td>
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Suiza</td>
+	                <td>No</td>
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Finlandia</td>
+	                <td>No</td>
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Holand</td>
+	                <td>No</td>
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Reino Unido</td>
+	                <td>No</td>
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>España</td>
+	                <td>No</td>
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Portugal</td>
+	                <td>No</td>
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Dinamarca</td>
+	                <td>No</td>
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Grecia</td>
+	                <td>No</td>
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Noruega</td>
+	                <td>No</td>
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Argentina</td>
+	                <td>No</td>
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Bolivia</td>
+	                <td>Sí</td>
+	                <td>No</td>
+	            </tr>
+	            <tr>
+	                <td>Chile</td>
+	                <td>Sí</td>
+	                <td>No</td>
+	            </tr>
+	            <tr>
+	                <td>Colombia</td>
+	                <td>Sí</td>
+	                <td>No</td>
+	            </tr>
+	            <tr>
+	                <td>Ecuador</td>
+	                <td>Sí</td>
+	                <td>No</td>
+	            </tr>
+	            <tr>
+	                <td>Uruguay</td>
+	                <td>No</td>
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Perú</td>
+	                <td>Sí</td>
+	                <td>No</td>
+	            </tr>
+	            <tr>
+	                <td>Republica Dominicana</td>
+	                <td>Sí</td>
+	                <td>No</td>
+	            </tr>
+	            <tr>
+	            	<td>Cuba</td>
+	                <td>No</td>
+	                <td>Sí</td>
+	            </tr>
+        	</table>
+        	<p>En el caso de Latinoamerica, los países presentan una mayor tasa de embarazados no deseados son aquellos en donde el aborto está penalizado.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>¿Hay menos embarazos no deseados en Europa porque existen más casos de aborto debido a su legalización? No exactamente</h2>
+        <img class="image-3" src="img/grafico3.png" alt="Grafico 3">
+    </div>
+
+    <div class="section">
+    	<h2>Entonces los países con aborto legalizado presentan una menor tasa de abortos</h2>
+    	<p>¿Será por el acceso a anticonceptivos?</p> 
+    	<div class="image-text">
+    		<table class="table-a">
+	            <tr>
+	                <th>País</th>
+	                <th>Acceso gratuito a anticoceptivos</th>
+	            </tr>
+	            <tr>
+	                <td>Francia</td>	                
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Alemania</td>	                
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Italia</td>	                
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Suiza</td>	                
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Finlandia</td>	               
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Holand</td>	                
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Reino Unido</td>	                
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>España</td>	                
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Portugal</td>	                
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Dinamarca</td>	                
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Grecia</td>	                
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Noruega</td>	                
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Argentina</td>	                
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Bolivia</td>
+	                <td>Sí</td>	                
+	            </tr>
+	            <tr>
+	                <td>Chile</td>
+	                <td>Sí</td>	                
+	            </tr>
+	            <tr>
+	                <td>Colombia</td>
+	                <td>Sí</td>	                
+	            </tr>
+	            <tr>
+	                <td>Ecuador</td>
+	                <td>Sí</td>	                
+	            </tr>
+	            <tr>
+	                <td>Uruguay</td>	                
+	                <td>Sí</td>
+	            </tr>
+	            <tr>
+	                <td>Perú</td>
+	                <td>Sí</td>	                
+	            </tr>
+	            <tr>
+	                <td>Republica Dominicana</td>
+	                <td>Sí</td>	                
+	            </tr>
+	            <tr>
+	            	<td>Cuba</td>	               
+	                <td>Sí</td>
+	            </tr>
+        	</table>
+    		<p>Todos los países seleccionados presentan acceso gratuito a anticonceptivos Entonces ¿por qué países en donde el aborto está penalizado y existe acceso a anticonceptivos siguen habiendo más embarazados no deseados? Políticas públicas Estos son los paises que presentan leyes abortivas</p>
+    	</div>
+    </div>
+
+    <div class="section">
+        <div class="image-text">
+            <img src="img/mapa.png" alt="Descripción imagen adicional">
+            <p>En la medida que existen políticas públicas y educación sexual, seguirán habiendo menos abortos no deseados, independiente de si está legalizado o no.  Porque junto al aborto, es necesaria una educación de paternidad responsable, para generar embarazos realmente deseados.</p>
+        </div>
     </div>
 
     <script>
-        // Aquí irá el código JavaScript para crear los gráficos
-        function crearGrafico1() {
-            // Datos del gráfico 1
+        // Función para crear el mapa dinámico
+        function crearMapa() {
             var data = [{
-                // Configuración del gráfico 1
+                type: 'choropleth',
+                locationmode: 'country names',
+                locations: ['USA', 'Canada', 'Mexico', 'Brazil', 'France', 'Germany', 'UK', 'China', 'Japan', 'Australia'],
+                z: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                text: ['Estados Unidos', 'Canadá', 'México', 'Brasil', 'Francia', 'Alemania', 'Reino Unido', 'China', 'Japón', 'Australia'],
+                colorscale: 'Viridis',
+                autocolorscale: false,
+                reversescale: true,
+                marker: {
+                    line: {
+                        color: 'rgb(180,180,180)',
+                        width: 0.5
+                    }
+                },
+                tick0: 0,
+                zmin: 0,
+                dtick: 1000,
+                colorbar: {
+                    autotic: false,
+                    tickprefix: '',
+                    title: 'Escala del Mapa'
+                }
             }];
+
             var layout = {
-                // Diseño del gráfico 1
+                title: 'Mapa de Aborto por País',
+                geo: {
+                    showframe: false,
+                    showcoastlines: true,
+                        type: 'mercator'
+                    }
+                }
             };
-            Plotly.newPlot('grafico1', data, layout);
+
+            Plotly.newPlot('mapa', data, layout, {responsive: true});
         }
 
-        function crearGrafico2() {
-            // Datos del gráfico 2
-            var data = [{
-                // Configuración del gráfico 2
-            }];
-            var layout = {
-                // Diseño del gráfico 2
-            };
-            Plotly.newPlot('grafico2', data, layout);
-        }
-
-        // Llamar a las funciones para crear los gráficos
-        crearGrafico1();
-        crearGrafico2();
+        // Llamar a la función para crear el mapa
+        crearMapa();
     </script>
 </body>
 </html>
