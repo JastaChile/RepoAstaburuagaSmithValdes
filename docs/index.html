@@ -1,369 +1,414 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparación de Aborto en Distintos Países</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <style>
-        body { /* Confirmo este codigo no es lo mejor */
+        body {
+            /* Confirmo este codigo no es lo mejor */
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
             background-color: #DF6C92;
         }
-        h1, h2 {
+
+        h1,
+        h2 {
             color: #333;
             text-align: center;
         }
-        .header {
-		    display: flex;
-		    justify-content: center;
-		    align-items: center;
-		    padding: 20px 0;
-		}
 
-		.logo {
-		    max-width: 200px; /* Ajusta este valor según el tamaño deseado */
-		    height: auto;
-		}
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            max-width: 200px;
+            /* Ajusta este valor según el tamaño deseado */
+            height: auto;
+        }
+
         .section {
             background-color: white;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         .image-text {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
+
         .image-text img {
             width: 45%;
             max-width: 800px;
             height: auto;
             margin-right: 20px;
         }
+
         .image-text p {
             width: 45%;
         }
+
         .image-3 {
-        	width: 100%;
+            width: 100%;
         }
+
         .table-a {
-        	display: flex;
-        	align-items: center;
-        	justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
         #mapa {
             width: 100%;
             height: 400px;
         }
+
         table {
             width: 45%;
             border-collapse: collapse;
         }
-        th, td {
+
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
         }
+
         th {
             background-color: #f2f2f2;
         }
+
         tr:nth-child(even) {
             background-color: #f9f9f9;
         }
+
         p {
-        	text-align: center;
+            text-align: center;
+        }
+        .chart-container {
+            width: 50%;
+            margin-right: 20px;
         }
     </style>
 </head>
+
 <body>
-	<header class="header">
-  		<img loading="lazy" class="logo" src="img/logo.png" alt="Logo">
-	</header>
+    <header class="header">
+        <img loading="lazy" class="logo" src="img/logo.png" alt="Logo">
+    </header>
     <h1>Aborto en el sistema</h1>
-    <p>Entre Latinoamerica y Europa existe una brecha significativa con respecto los índices de aborto en cada continente.</p>
-    
+    <p>Entre Latinoamerica y Europa existe una brecha significativa con respecto los índices de aborto en cada
+        continente.</p>
+
     <div class="section">
         <div class="image-text">
             <img src="img/grafico1.png" alt="Descripción imagen 1">
-            <p>Justamente los países los países de Europa son aquellos en donde existen menos embarazados no deseados y donde el aborto está legalizado.  
-			</p>
+            <p>Justamente los países los países de Europa son aquellos en donde existen menos embarazados no deseados y
+                donde el aborto está legalizado.
+            </p>
         </div>
         <h3>Estado del Aborto por País</h3>
         <div class="image-text">
-        	<table>
-	            <tr>
-	                <th>País</th>
-	                <th>Aborto Penalizado</th>
-	                <th>Aborto Legalizado</th>
-	            </tr>
-	            <tr>
-	                <td>Francia</td>
-	                <td>No</td>
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Alemania</td>
-	                <td>No</td>
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Italia</td>
-	                <td>No</td>
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Suiza</td>
-	                <td>No</td>
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Finlandia</td>
-	                <td>No</td>
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Holand</td>
-	                <td>No</td>
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Reino Unido</td>
-	                <td>No</td>
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>España</td>
-	                <td>No</td>
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Portugal</td>
-	                <td>No</td>
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Dinamarca</td>
-	                <td>No</td>
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Grecia</td>
-	                <td>No</td>
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Noruega</td>
-	                <td>No</td>
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Argentina</td>
-	                <td>No</td>
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Bolivia</td>
-	                <td>Sí</td>
-	                <td>No</td>
-	            </tr>
-	            <tr>
-	                <td>Chile</td>
-	                <td>Sí</td>
-	                <td>No</td>
-	            </tr>
-	            <tr>
-	                <td>Colombia</td>
-	                <td>Sí</td>
-	                <td>No</td>
-	            </tr>
-	            <tr>
-	                <td>Ecuador</td>
-	                <td>Sí</td>
-	                <td>No</td>
-	            </tr>
-	            <tr>
-	                <td>Uruguay</td>
-	                <td>No</td>
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Perú</td>
-	                <td>Sí</td>
-	                <td>No</td>
-	            </tr>
-	            <tr>
-	                <td>Republica Dominicana</td>
-	                <td>Sí</td>
-	                <td>No</td>
-	            </tr>
-	            <tr>
-	            	<td>Cuba</td>
-	                <td>No</td>
-	                <td>Sí</td>
-	            </tr>
-        	</table>
-        	<p>En el caso de Latinoamerica, los países presentan una mayor tasa de embarazados no deseados son aquellos en donde el aborto está penalizado.</p>
+            <table>
+                <tr>
+                    <th>País</th>
+                    <th>Aborto Penalizado</th>
+                    <th>Aborto Legalizado</th>
+                </tr>
+                <tr>
+                    <td>Francia</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Alemania</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Italia</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Suiza</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Finlandia</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Holand</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Reino Unido</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>España</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Portugal</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Dinamarca</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Grecia</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Noruega</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Argentina</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Bolivia</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Chile</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Colombia</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Ecuador</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Uruguay</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Perú</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Republica Dominicana</td>
+                    <td>Sí</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>Cuba</td>
+                    <td>No</td>
+                    <td>Sí</td>
+                </tr>
+            </table>
+            <p>En el caso de Latinoamerica, los países presentan una mayor tasa de embarazados no deseados son aquellos
+                en donde el aborto está penalizado.</p>
         </div>
     </div>
 
     <div class="section">
-        <h2>¿Hay menos embarazos no deseados en Europa porque existen más casos de aborto debido a su legalización? No exactamente</h2>
+        <h2>¿Hay menos embarazos no deseados en Europa porque existen más casos de aborto debido a su legalización? No
+            exactamente</h2>
         <img class="image-3" src="img/grafico3.png" alt="Grafico 3">
     </div>
 
     <div class="section">
-    	<h2>Entonces los países con aborto legalizado presentan una menor tasa de abortos</h2>
-    	<p>¿Será por el acceso a anticonceptivos?</p> 
-    	<div class="image-text">
-    		<table class="table-a">
-	            <tr>
-	                <th>País</th>
-	                <th>Acceso gratuito a anticoceptivos</th>
-	            </tr>
-	            <tr>
-	                <td>Francia</td>	                
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Alemania</td>	                
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Italia</td>	                
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Suiza</td>	                
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Finlandia</td>	               
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Holand</td>	                
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Reino Unido</td>	                
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>España</td>	                
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Portugal</td>	                
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Dinamarca</td>	                
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Grecia</td>	                
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Noruega</td>	                
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Argentina</td>	                
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Bolivia</td>
-	                <td>Sí</td>	                
-	            </tr>
-	            <tr>
-	                <td>Chile</td>
-	                <td>Sí</td>	                
-	            </tr>
-	            <tr>
-	                <td>Colombia</td>
-	                <td>Sí</td>	                
-	            </tr>
-	            <tr>
-	                <td>Ecuador</td>
-	                <td>Sí</td>	                
-	            </tr>
-	            <tr>
-	                <td>Uruguay</td>	                
-	                <td>Sí</td>
-	            </tr>
-	            <tr>
-	                <td>Perú</td>
-	                <td>Sí</td>	                
-	            </tr>
-	            <tr>
-	                <td>Republica Dominicana</td>
-	                <td>Sí</td>	                
-	            </tr>
-	            <tr>
-	            	<td>Cuba</td>	               
-	                <td>Sí</td>
-	            </tr>
-        	</table>
-    		<p>Todos los países seleccionados presentan acceso gratuito a anticonceptivos Entonces ¿por qué países en donde el aborto está penalizado y existe acceso a anticonceptivos siguen habiendo más embarazados no deseados? Políticas públicas Estos son los paises que presentan leyes abortivas</p>
-    	</div>
-    </div>
-
-    <div class="section">
+        <h2>Entonces los países con aborto legalizado presentan una menor tasa de abortos</h2>
+        <p>¿Será por el acceso a anticonceptivos?</p>
         <div class="image-text">
-            <img src="img/mapa.png" alt="Descripción imagen adicional">
-            <p>En la medida que existen políticas públicas y educación sexual, seguirán habiendo menos abortos no deseados, independiente de si está legalizado o no.  Porque junto al aborto, es necesaria una educación de paternidad responsable, para generar embarazos realmente deseados.</p>
+            <table class="table-a">
+                <tr>
+                    <th>País</th>
+                    <th>Acceso gratuito a anticoceptivos</th>
+                </tr>
+                <tr>
+                    <td>Francia</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Alemania</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Italia</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Suiza</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Finlandia</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Holand</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Reino Unido</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>España</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Portugal</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Dinamarca</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Grecia</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Noruega</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Argentina</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Bolivia</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Chile</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Colombia</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Ecuador</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Uruguay</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Perú</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Republica Dominicana</td>
+                    <td>Sí</td>
+                </tr>
+                <tr>
+                    <td>Cuba</td>
+                    <td>Sí</td>
+                </tr>
+            </table>
+            <p>Todos los países seleccionados presentan acceso gratuito a anticonceptivos Entonces ¿por qué países en
+                donde el aborto está penalizado y existe acceso a anticonceptivos siguen habiendo más embarazados no
+                deseados? Políticas públicas Estos son los paises que presentan leyes abortivas</p>
         </div>
     </div>
 
+    <div class="section">
+        <ul>
+            <li><span style="color: green;">Verde</span>: El aborto está legalizado y no penalizado.</li>
+            <li><span style="color: red;">Rojo</span>: El aborto está penalizado y no legalizado.</li>
+        </ul>
+        <div class="image-text">    
+            <div id="abortionMap" style="width: 600px; height: 400px;"></div>
+            <p>En la medida que existen políticas públicas y educación sexual, seguirán habiendo menos abortos no
+                deseados, independiente de si está legalizado o no. Porque junto al aborto, es necesaria una educación
+                de paternidad responsable, para generar embarazos realmente deseados.</p>
+        </div>
+    </div>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    
     <script>
-        // Función para crear el mapa dinámico
-        function crearMapa() {
-            var data = [{
-                type: 'choropleth',
-                locationmode: 'country names',
-                locations: ['USA', 'Canada', 'Mexico', 'Brazil', 'France', 'Germany', 'UK', 'China', 'Japan', 'Australia'],
-                z: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                text: ['Estados Unidos', 'Canadá', 'México', 'Brasil', 'Francia', 'Alemania', 'Reino Unido', 'China', 'Japón', 'Australia'],
-                colorscale: 'Viridis',
-                autocolorscale: false,
-                reversescale: true,
-                marker: {
-                    line: {
-                        color: 'rgb(180,180,180)',
-                        width: 0.5
-                    }
-                },
-                tick0: 0,
-                zmin: 0,
-                dtick: 1000,
-                colorbar: {
-                    autotic: false,
-                    tickprefix: '',
-                    title: 'Escala del Mapa'
-                }
-            }];
+        document.addEventListener('DOMContentLoaded', function () {
+            var map = L.map('abortionMap').setView([20, 0], 2);
 
-            var layout = {
-                title: 'Mapa de Aborto por País',
-                geo: {
-                    showframe: false,
-                    showcoastlines: true,
-                        type: 'mercator'
-                    }
-                }
-            };
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
 
-            Plotly.newPlot('mapa', data, layout, {responsive: true});
-        }
+            var countries = [
+                { name: "Francia", lat: 46.227638, lon: 2.213749, penalized: "No", legalized: "Sí" },
+                { name: "Alemania", lat: 51.165691, lon: 10.451526, penalized: "No", legalized: "Sí" },
+                { name: "Italia", lat: 41.87194, lon: 12.56738, penalized: "No", legalized: "Sí" },
+                { name: "Suiza", lat: 46.818188, lon: 8.227512, penalized: "No", legalized: "Sí" },
+                { name: "Finlandia", lat: 61.92411, lon: 25.748151, penalized: "No", legalized: "Sí" },
+                { name: "Holanda", lat: 52.132633, lon: 5.291266, penalized: "No", legalized: "Sí" },
+                { name: "Reino Unido", lat: 55.378051, lon: -3.435973, penalized: "No", legalized: "Sí" },
+                { name: "España", lat: 40.463667, lon: -3.74922, penalized: "No", legalized: "Sí" },
+                { name: "Portugal", lat: 39.399872, lon: -8.224454, penalized: "No", legalized: "Sí" },
+                { name: "Dinamarca", lat: 56.26392, lon: 9.501785, penalized: "No", legalized: "Sí" },
+                { name: "Grecia", lat: 39.074208, lon: 21.824312, penalized: "No", legalized: "Sí" },
+                { name: "Noruega", lat: 60.472024, lon: 8.468946, penalized: "No", legalized: "Sí" },
+                { name: "Argentina", lat: -38.416097, lon: -63.616672, penalized: "No", legalized: "Sí" },
+                { name: "Bolivia", lat: -16.290154, lon: -63.588653, penalized: "Sí", legalized: "No" },
+                { name: "Chile", lat: -35.675147, lon: -71.542969, penalized: "Sí", legalized: "No" },
+                { name: "Colombia", lat: 4.570868, lon: -74.297333, penalized: "Sí", legalized: "No" },
+                { name: "Ecuador", lat: -1.831239, lon: -78.183406, penalized: "Sí", legalized: "No" },
+                { name: "Uruguay", lat: -32.522779, lon: -55.765835, penalized: "No", legalized: "Sí" },
+                { name: "Perú", lat: -9.189967, lon: -75.015152, penalized: "Sí", legalized: "No" },
+                { name: "República Dominicana", lat: 18.735693, lon: -70.162651, penalized: "Sí", legalized: "No" },
+                { name: "Cuba", lat: 21.521757, lon: -77.781167, penalized: "No", legalized: "Sí" }
+            ];
 
-        // Llamar a la función para crear el mapa
-        crearMapa();
+            countries.forEach(function (country) {
+                var color = country.legalized === "Sí" ? 'green' : 'red';
+                L.circleMarker([country.lat, country.lon], {
+                    color: color,
+                    fillColor: color,
+                    fillOpacity: 0.8,
+                    radius: 8
+                }).addTo(map).bindPopup(
+                    "<strong>" + country.name + "</strong><br>" +
+                    "Aborto Penalizado: " + country.penalized + "<br>" +
+                    "Aborto Legalizado: " + country.legalized
+                );
+            });
+        });
     </script>
 </body>
+
 </html>
