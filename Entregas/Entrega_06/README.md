@@ -1,5 +1,7 @@
 # Explicación del proyecto
 
+[Página web](https://jastachile.github.io/RepoAstaburuagaSmithValdes/)
+
 El propósito de esta página web es comparar la relación entre penalización y legalización del aborto con respecto la tasa de embarazos no deseados en cada país.
 
 Para esto, se utilizaron tres bases de datos para recopilar información. En primera instancia, se utilizó una base de datos de la OMS que indica la penalización y legalización del aborto en cada país, y se seleccionaron los siguientes países de Europa y Latinoamérica: Francia, Alemania, Italia, Suiza Finlandia, Holanda, Reino Unido, España, Portugal, Dinamarca, Grecia, Noruega, Argentina, Bolivia, Chile, Colombia, Ecuador, Uruguay, Perú, República Dominicana y Cuba.
