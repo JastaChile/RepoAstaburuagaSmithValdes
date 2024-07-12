@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.png">
+    <title>Aborto en Europa y Latinoamérica</title>
+    <!DOCTYPE html>
+    <html lang="es">
+    
+    <style>
+        canvas {
+            max-width: 100%;
+            height: auto;
+        }
+        body {
+            font-family: 'IBM Plex Sans', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1B1B3A;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #DEF6CA;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url('https://i.gifer.com/2yqT.gif');
+        }
+
+        * {
+            font-family: 'IBM Plex Sans', Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            background-color: #6457A6;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+            
+        }
+
+        section {
+            margin-bottom: 40px;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'IBM Plex Sans', Arial, sans-serif;
+            font-weight: 700;
+        }
+
+        h1,
+        h2 {
+            color: #DF6C92;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 500px; /* Altura fija, ajusta según necesites */
+            margin: 20px 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #6457A6;
+            border-radius: 8px;
+            overflow: hidden; /* Esto evitará que el mapa se salga del contenedor */
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 600px; /* Altura inicial, se ajustará con JavaScript */
+            min-height: 400px; /* Altura mínima para evitar que sea demasiado pequeño */
+            margin: 20px 0;
+            overflow: hidden; /* Evita que el contenido se salga */
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .team-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 30%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team-card .image-container {
+            width: 100%;
+            padding-top: 100%; /* Esto crea un contenedor cuadrado */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Esto hará que la imagen cubra todo el espacio sin distorsionarse */
+        }
+
+        .team-card h3 {
+            text-align: center;
+            padding: 10px;
+            margin: 0;
+            background-color: #6457A6;
+            color: #FFFFFF;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .chart-container {
+                height: 300px;
+            }
+
+            .team-card {
+                width: 100%;
+            }
+        }
+
+        footer {
+            background-color: #6457A6;
+            color: #FFFFFF;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        footer .heart {
+            color: #DF6C92;
+            font-size: 1.2em;
+        }
+
+        footer .repo-link {
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #DEF6CA;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 2px solid #DEF6CA;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            background-color: #DEF6CA;
+            color: #6457A6;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                padding: 20px 10px;
+            }
+        }
+        .paises {
+            color: #DF6C92;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="img/logo.png" alt="Logo" class="logo">
+        
+    </header>
+    
+    <main>
+
+        <section>
+            <h1>Leyes sobre el aborto en Europa y Latinoamérica</h1>
+            <p>En el mundo existen distintas leyes con respecto al aborto. En algunos países está legalizado y en otros se
+                encuentra penalizado.</p>
+            <p>Si analizamos los continentes de Europa y Latinoamérica, a través de estos gráficos, podemos visualizar en qué países,
+            seleccionados de ambos continentes, el aborto está legalizado o penalizado.</p>
+            <p> En esta caso los países seleccionados de Europa son: 
+                
+                <p class="paises">FRANCIA, ALEMANIA, ITALIA, SUIZA, FINLANDIA, HOLANDA, REINO UNIDO, ESPAÑA, PORTUGAL,
+            DINAMARCA, GRECIA Y NORUEGA</p> 
+            
+            Y los seleccionados de Latinoamérica corresponden a: <p class="paises">ARGENTINA, BOLIVIA, CHILE, COLOMBIA,
+            ECUADOR, URUGUAY, PERÚ, REPÚBLICA DOMINICANA Y CUBA.</p> </p>
+            <div class="chart-container">
+                <div id="abortionMap" style="width: 100%; height: 100%;"></div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Análisis por continente</h2>
+            
+            <p>Los puntos rojos marcan la penalización y los puntos verdes la legalización del aborto. Podemos ver que todos
+                los países analizados de Europa cuentan con leyes que legalizan el aborto y en Latinoamérica, la mayoría
+                penaliza el aborto a excepción de Uruguay, Cuba y Argentina.</p>
+
+            <p>En el caso de Europa, corresponden a países desarrollados, con una mejor economía, acceso educacional y
+                salud.</p>
+            <p>Los países de Latinoamérica en donde el aborto está legalizado, son justamente los países en donde la salud y
+                la educación son gratuitas.</p>
+        </section>
+        
+        <section>
+            <h2>Embarazos no deseados y legalización del aborto</h2>
+            <p>Si observamos la cantidad de embarazos no deseados que existen en cada continente, considerando la
+                penalización o legalización del aborto, podemos ver a través de este gráfico, que la tendencia está en
+                Latinoamérica, pero los países que presentan una tasa menor de embarazos no deseados son los países Europeos
+                y los países de Latinoamérica en donde el aborto está legalizado.</p>
+            <div class="chart-container">
+                <div id="tasaEmbarazosChart" class="chart-container2"></div>
+            </div>
+            <p>Es decir que existe una relación directa entre la legalización y la cantidad de embarazos no deseados. Países
+                en donde el aborto está legalizado, presentan una menor tasa de embarazos no deseados y países donde el
+                aborto está penalizado, presentan una mayor tasa de embarazos no deseados.</p>
+        </section>
+        
+        <section>
+            <h2>Tasa de abortos y legalización</h2>
+            <p>Es importante analizar si los países en donde el aborto está legalizado, presentan una mayor tasa de abortos,
+                lo que hace que existan menos embarazos no deseados, en relación a los países en donde no tienen derecho a
+                abortar.</p>
+            <p>Pero resulta que la menor tasa de abortos del mundo, se encuentran en Europa. Entonces la legalización del
+                aborto no implica que existan más abortos, pero sí que existan menos embarazos no deseados.</p>
+            <div class="chart-container">
+                <div id="chart"></div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Acceso a anticonceptivos y educación sexual</h2>
+            <p>Si observamos los países analizados de ambos continentes, todos, excepto uno, cuentan con acceso gratuito a
+                anticonceptivos, independiente de la legalización o penalización del aborto.</p>
+            <p>Pero los países en donde el aborto está legalizado, cuentan con distintos programas de educación sexual que
+                respaldan el derecho a abortar.</p>
+            <p>Los países en donde el aborto está penalizado, no suelen presentar un plan educativo de responsabilidad
+                sexual, ya que no necesitan respaldar la penalización, ni enseñar mucho acerca del derecho a no abortar.</p>
+        </section>
+
+        <section id="notas-metodologicas">
+            <h2>Calidad educación sexual</h2>
+            <p>Según datos de la UNESCO, OMS Y UNSFPA, se construyó un grafico que compara las escalas de calidad de educación
+                sexual
+                en cada país, con la base de datos de embarazos no deseados. Para medir esta escala, se estimaron los siguientes
+                factores:</p>
+            <ul>
+                <li>Amplitud y profundidad del currículo de educación sexual</li>
+                <li>Obligatoriedad de la educación sexual en el sistema educativo</li>
+                <li>Edad de inicio de la educación sexual</li>
+                <li>Formación de los educadores en temas de sexualidad</li>
+                <li>Políticas nacionales sobre educación sexual y salud reproductiva</li>
+                <li>Reportes de organizaciones internacionales como UNESCO, OMS y UNFPA</li>
+            </ul>
+            <p>Escala: 0-100, donde 0 representa la ausencia total de educación sexual y 100 representa un sistema de educación
+                sexual integral, obligatorio y basado en evidencia científica.</p>
+            <p><strong>Nota importante:</strong> Estos datos son aproximaciones y pueden no reflejar con precisión la realidad
+                en cada país, ya que la calidad de la educación sexual puede variar significativamente dentro de un mismo país y
+                entre diferentes instituciones educativas.</p>
+            <p>
+                De esta manera, es posible visualizar que existe una línea decreciente en calidad de educación sexual, a medidas que
+                crece que la tasa de embarazos no deseados.
+            </p>
+            <div class="chart-container">
+                <canvas id="chartTasaAborto"></canvas>
+            </div>
+            
+        </section>
+        
+        <section>
+            
+            <h2>Conclusiones</h2>
+            <p>
+                Los países en donde está legalizado el aborto, suelen ser países Europeos, que cuentan con acceso gratuito a
+                anticonceptivos, con una alta calidad en materias de educación sexual y tienen una menor tasa de embarazados no
+                deseados.
+            </p>
+            <p>Los países en donde está penalizado el aborto, suelen ser países Lationamericanos, a excepción de Argentina, Uruguay y
+            Cuba, donde la educación y la salud es gratuita, presentan a acceso a anticonceptivos, pero una baja calidad en materias
+            de educación sexual y, finalmente, presentan una mayor tasa de embarazados no deseados.</p>
+            <p>
+                El factor común es el acceso gratuito a anticonceptivos, pero los países que cuentan con una legalización del aborto
+                invierten más recursos en educación sexual, y los países en donde está penalizado invierten menos.
+            </p>
+            <p>
+                Eso se ve reflejado en las tazas de embarazados no deseados, en donde existe una tendencia en la medida en que la
+                educación sexual es de baja calidad.
+            </p>
+            
+        </section>
+        
+        <section>
+            <h2>Nuestro Equipo</h2>
+            <div class="team-container">
+                <div class="team-card">
+                    <div class="image-container">
+                        <img src="img/1.jpeg" alt="Philippa Smith">
+                    </div>
+                    <h3>Philippa Smith</h3>
+                </div>
+                <div class="team-card">
+                    <div class="image-container">
+                        <img src="img/2.jpeg" alt="Joaquín Astaburuaga">
+                    </div>
+                    <h3>Joaquín Astaburuaga</h3>
+                </div>
+                <div class="team-card">
+                    <div class="image-container">
+                        <img src="img/3.jpeg" alt="Laura Valdés">
+                    </div>
+                    <h3>Laura Valdés</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="referencias">
+            <h2>Referencias</h2>
+            <strong>Bases de Datos</strong>
+            <ul>
+                <li>
+                    <strong>Global Abortion Policies Database</strong>: "Legislación sobre el aborto en todo el mundo".
+                    <a href="https://abortion-policies.srhr.org/?mapq=" target="_blank">Enlace</a>
+                    <span class="descripcion">
+                        Base de datos con información sobre la legislación del aborto en todo el mundo, incluyendo los países
+                        de Europa y Latinoamérica.
+                    </span>
+                </li>
+                
+                <li>
+                    <strong>OMS</strong>: "Estadísticas sobre el aborto en el mundo".
+                    <a href="https://www.who.int/data/gho/data/indicators/indicator-details/GHO/SRH_ABORTION_RATE" target="_blank">Enlace</a>
+                    <span class="descripcion">
+                        Datos sobre la tasa de abortos en el mundo y su relación con la legalización del aborto.
+                    </span>
+                </li>
+
+                <li>
+                    <strong>OMS</strong>: "Estadísticas sobre embarazos no deseados en el mundo".
+                    <a href="https://www.who.int/data/gho/data/indicators/indicator-details/GHO/SRH_PREGNANCY_UNINTENDED_RATE" target="_blank">Enlace</a>
+                    <span class="descripcion">
+                        Datos sobre la tasa de embarazos no deseados en el mundo y su relación con la legalización del aborto.
+                    </span>
+
+                </li>
+            </ul>
+            <strong>Metodología</strong>
+            <ul>
+                <li>
+                    UNESCO (2015). Emerging Evidence, Lessons and Practice in Comprehensive Sexuality Education: A Global
+                    Review.
+                    <a href="https://unesdoc.unesco.org/ark:/48223/pf0000243106"
+                        target="_blank">https://unesdoc.unesco.org/ark:/48223/pf0000243106</a>
+                </li>
+                <li>
+                    OMS (2020). Recomendaciones de la OMS sobre salud y derechos sexuales y reproductivos de los adolescentes.
+                    <a href="https://www.who.int/reproductivehealth/publications/adolescent-srhr-who-recommendations/es/"
+                        target="_blank">https://www.who.int/reproductivehealth/publications/adolescent-srhr-who-recommendations/es/</a>
+                </li>
+                <li>
+                    UNFPA (2021). El poder de decidir: Derechos reproductivos y transición demográfica.
+                    <a href="https://www.unfpa.org/es/swop-2018" target="_blank">https://www.unfpa.org/es/swop-2018</a>
+                </li>
+                <li>
+                    European Expert Group on Sexuality Education (2016). Sexuality education – what is it?. Sex Education,
+                    16(4),
+                    427-431.
+                    <a href="https://doi.org/10.1080/14681811.2015.1100599"
+                        target="_blank">https://doi.org/10.1080/14681811.2015.1100599</a>
+                </li>
+            </ul>
+        </section>
+
+        
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Proyecto hecho con <span class="heart">❤</span> para el curso Narración Gráfica de No Ficción</p>
+            <p>Sección de la profesora Katherine Páez, primer semestre de 2024</p>
+            <p class="repo-link">
+                <a href="https://github.com/JastaChile/RepoAstaburuagaSmithValdes/tree/main" target="_blank">
+                    Ver nuestro repositorio en GitHub
+                </a>
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var map = L.map('abortionMap').setView([20, 0], 2);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            var countries = [
+                { name: "Francia", lat: 46.227638, lon: 2.213749, penalized: "No", legalized: "Sí" },
+                { name: "Alemania", lat: 51.165691, lon: 10.451526, penalized: "No", legalized: "Sí" },
+                { name: "Italia", lat: 41.87194, lon: 12.56738, penalized: "No", legalized: "Sí" },
+                { name: "Suiza", lat: 46.818188, lon: 8.227512, penalized: "No", legalized: "Sí" },
+                { name: "Finlandia", lat: 61.92411, lon: 25.748151, penalized: "No", legalized: "Sí" },
+                { name: "Holanda", lat: 52.132633, lon: 5.291266, penalized: "No", legalized: "Sí" },
+                { name: "Reino Unido", lat: 55.378051, lon: -3.435973, penalized: "No", legalized: "Sí" },
+                { name: "España", lat: 40.463667, lon: -3.74922, penalized: "No", legalized: "Sí" },
+                { name: "Portugal", lat: 39.399872, lon: -8.224454, penalized: "No", legalized: "Sí" },
+                { name: "Dinamarca", lat: 56.26392, lon: 9.501785, penalized: "No", legalized: "Sí" },
+                { name: "Grecia", lat: 39.074208, lon: 21.824312, penalized: "No", legalized: "Sí" },
+                { name: "Noruega", lat: 60.472024, lon: 8.468946, penalized: "No", legalized: "Sí" },
+                { name: "Argentina", lat: -38.416097, lon: -63.616672, penalized: "No", legalized: "Sí" },
+                { name: "Bolivia", lat: -16.290154, lon: -63.588653, penalized: "Sí", legalized: "No" },
+                { name: "Chile", lat: -35.675147, lon: -71.542969, penalized: "Sí", legalized: "No" },
+                { name: "Colombia", lat: 4.570868, lon: -74.297333, penalized: "Sí", legalized: "No" },
+                { name: "Ecuador", lat: -1.831239, lon: -78.183406, penalized: "Sí", legalized: "No" },
+                { name: "Uruguay", lat: -32.522779, lon: -55.765835, penalized: "No", legalized: "Sí" },
+                { name: "Perú", lat: -9.189967, lon: -75.015152, penalized: "Sí", legalized: "No" },
+                { name: "República Dominicana", lat: 18.735693, lon: -70.162651, penalized: "Sí", legalized: "No" },
+                { name: "Cuba", lat: 21.521757, lon: -77.781167, penalized: "No", legalized: "Sí" }
+            ];
+
+            countries.forEach(function (country) {
+                var color = country.legalized === "Sí" ? 'green' : 'red';
+                L.circleMarker([country.lat, country.lon], {
+                    color: color,
+                    fillColor: color,
+                    fillOpacity: 0.8,
+                    radius: 8
+                }).addTo(map).bindPopup(
+                    "<strong>" + country.name + "</strong><br>" +
+                    "Aborto Penalizado: " + country.penalized + "<br>" +
+                    "Aborto Legalizado: " + country.legalized
+                );
+            });
+
+            setTimeout(function () { map.invalidateSize() }, 100);
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var data = [
+                {
+                    y: ['Holanda', 'España', 'Suiza', 'Portugal', 'Alemania', 'Italia', 'Francia', 'Dinamarca', 'Finlandia', 'Grecia', 'Noruega', 'Reino Unido', 'Uruguay', 'Colombia', 'Argentina', 'Chile', 'Cuba', 'Ecuador', 'Rep. Dominicana', 'Perú', 'Bolivia'],
+                    x: [17.53, 20.26, 20.31, 20.90, 21.29, 28.32, 28.98, 29.80, 32.56, 32.97, 34.17, 36.17, 41.48, 62.72, 69.04, 70.01, 71.56, 79.73, 83.68, 89.53, 104.70],
+                    type: 'bar',
+                    orientation: 'h',
+                    marker: {
+                        color: 'skyblue'
+                    }
+                }
+            ];
+
+            var layout = {
+                title: 'Tasa de Embarazos No Deseados por País',
+                xaxis: {
+                    title: 'Tasa de Embarazos No Deseados por 1000 Mujeres',
+                    titlefont: {
+                        size: 14
+                    },
+                    tickfont: {
+                        size: 12
+                    }
+                },
+                yaxis: {
+                    title: 'País',
+                    automargin: true,
+                    tickfont: {
+                        size: 12
+                    }
+                },
+                margin: {
+                    l: 80,
+                    r: 50,
+                    t: 50,
+                    b: 100
+                },
+                autosize: true,
+                height: 600
+            };
+
+            var config = {
+                responsive: true,
+                displayModeBar: false // Oculta la barra de herramientas
+            };
+
+            // Asegúrate de que el contenedor del gráfico tenga un tamaño definido
+            document.getElementById('tasaEmbarazosChart').style.height = '100%';
+            document.getElementById('tasaEmbarazosChart').style.width = '100%';
+
+            // Crear el gráfico inicialmente
+            Plotly.newPlot('tasaEmbarazosChart', data, layout, config);
+
+        });
+    </script>
+
+    <script>
+        // Datos de ejemplo: tasa de aborto por cada país
+            const data = [
+                { country: 'Cuba', rate: 55 },
+                { country: 'Tobago', rate: 48 },
+                { country: 'Russia', rate: 46 },
+                { country: 'Barbados', rate: 45 },
+                { country: 'Perú', rate: 42 },
+                { country: 'Bolivia', rate: 38 },
+                { country: 'Haiti', rate: 38 },
+                { country: 'Jamaica', rate: 38 },
+                { country: 'Rep. Dominicana', rate: 37 },
+                { country: 'Saint Lucia', rate: 37 },
+                { country: 'Slovenia', rate: 8 },
+                { country: 'Finlandia', rate: 8 },
+                { country: 'Slovakia', rate: 7 },
+                { country: 'Lithuania', rate: 7 },
+                { country: 'Portugal', rate: 7 },
+                { country: 'Paises Bajos', rate: 7 },
+                { country: 'Czechia', rate: 7 },
+                { country: 'Alemania', rate: 6 },
+                { country: 'Montenegro', rate: 6 },
+                { country: 'Suiza', rate: 5 }
+            ];
+
+            // Extraer los países y las tasas de aborto en arrays separados
+            const countries = data.map(item => item.country);
+            const rates = data.map(item => item.rate);
+
+            // Crear el gráfico
+            const trace = {
+                x: countries,
+                y: rates,
+                type: 'bar',
+                marker: {
+                    color: 'rgba(0,128,255,0.7)',
+                    line: {
+                        color: 'rgba(0,128,255,1)',
+                        width: 1
+                    }
+                }
+            };
+
+            const layout = {
+                title: 'Tasa de Aborto por País',
+                xaxis: {
+                    title: 'País',
+                    tickangle: -45
+                },
+                yaxis: {
+                    title: 'Tasa de Aborto'
+                },
+                autosize: true,
+                margin: {
+                    l: 50,
+                    r: 50,
+                    b: 100,
+                    t: 100,
+                    pad: 4
+                }
+            };
+
+            const config = {
+                responsive: true
+            };
+
+            // Asegúrate de que el contenedor del gráfico tenga un tamaño definido
+            document.getElementById('chart').style.height = '100%';
+            document.getElementById('chart').style.width = '100%';
+
+            Plotly.newPlot('chart', [trace], layout, config);
+
+            // Ajustar el tamaño del gráfico cuando cambie el tamaño de la ventana
+            window.addEventListener('resize', function () {
+                Plotly.relayout('chart', {
+                    'xaxis.autorange': true,
+                    'yaxis.autorange': true
+                });
+            });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const countries2 = ['Holanda', 'España', 'Suiza', 'Portugal', 'Alemania', 'Italia', 'Francia', 'Dinamarca', 'Finlandia', 'Grecia', 'Noruega', 'Reino Unido', 'Uruguay', 'Colombia', 'Argentina', 'Chile', 'Cuba', 'Ecuador', 'Rep. Dominicana', 'Perú', 'Bolivia'];
+            const pregnancyRates2 = [17.53, 20.26, 20.31, 20.90, 21.29, 28.32, 28.98, 29.80, 32.56, 32.97, 34.17, 36.17, 41.48, 62.72, 69.04, 70.01, 71.56, 79.73, 83.68, 89.53, 104.70];
+            const educationQuality2 = [90, 65, 80, 60, 80, 55, 70, 85, 85, 50, 85, 75, 70, 50, 65, 60, 70, 45, 40, 40, 35];
+
+            // Crear gráfica interactiva
+            const ctx = document.getElementById('chartTasaAborto').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar', // Puedes cambiar a 'line' o 'mixed' si prefieres otro tipo de gráfico
+                data: {
+                    labels: countries2,
+                    datasets: [
+                        {
+                            label: 'Tasa de Embarazos No Deseados',
+                            data: pregnancyRates2,
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1,
+                            type: 'bar'
+                        },
+                        {
+                            label: 'Calidad de Educación Sexual',
+                            data: educationQuality2,
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1,
+                            type: 'line',
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: false,
+                            title: {
+                                display: true,
+                                text: 'País'
+                            }
+                        },
+                        y: {
+                            stacked: false,
+                            title: {
+                                display: true,
+                                text: 'Tasa de Embarazos No Deseados'
+                            }
+                        },
+                        y1: {
+                            type: 'linear',
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: 'Calidad de Educación Sexual'
+                            },
+                            grid: {
+                                drawOnChartArea: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: true
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.y !== null) {
+                                        label += context.parsed.y;
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+    
+</body>
+
+</html>
